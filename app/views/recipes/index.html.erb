@@ -7,10 +7,9 @@
             <% @recipes.each do |recipe| %>
             <div class="col-lg-4 col-md-6 col-xs-6 recipe">
               <div class="image-wrapper">
-              <%= cl_image_tag recipe.photo, height: 400, width: 400, crop: :fill %>
+              <%= cl_image_tag recipe.photo, height: 400, width: 400 %>
             </div>
                 <h1><%= link_to recipe.title, recipe %></h1>
-                </a>
             </div>
              <% end %>
         </div>
@@ -23,7 +22,16 @@
   background: white;
   margin-bottom: 40px;
   box-shadow: -1px 2px 9px 0px rgba(179,173,179,1);
+   -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    border-radius: 5px;
 }
+
+ .recipe:hover {
+      transform: scale(1.075);
+    }
 
 .alert {
   padding: 15px;
@@ -36,7 +44,7 @@
 
 .recipe img {
   max-width: 100%;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 
@@ -45,23 +53,14 @@
   margin-bottom: 20px;
 }
 
-  .image_wrapper {
+  .recipe .image_wrapper {
     max-width: 100%;
-    border-radius: 5px 5px 0 0;
     overflow: hidden;
   }
   img {
     width: 100%;
-    margin-top: 7px;
-    border-radius: 10px;
-    -webkit-transition: all .3s ease-out;
-    -moz-transition: all .3s ease-out;
-    -o-transition: all .3s ease-out;
-    transition: all .3s ease-out;
+    margin-top: 10px;
   }
-   img:hover {
-      transform: scale(1.075);
-    }
 
   h2 a{
     padding: 15px 5%;
