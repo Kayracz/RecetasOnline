@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RecipeBox</title>
+    <title>Recipe App</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+
+<div class= "nav navbar navbar-default">
+  <div class="container">
+    <div class="navbar-brand">
+<div class="container navbar-right">
+ <%= link_to "Recipe box", root_path %>
+
+ <div class="nav navbar-nav navbar-right">
+   <%= link_to "New Recipe", new_recipe_path %>&nbsp;&nbsp;
+   <%= link_to "Sign Out", root_path %>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="container">
+   <% flash do |name, msg| %>
+   <% content_tag :div, msg, class: "alert" %>
+  <% end %>
+  </div>
+
+
     <%= yield %>
   </body>
 </html>
+
