@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<%= cl_image_tag @recipe.photo, height: 200, width: 200, crop: :fill %>
+<h2>
   <%= @recipe.title %>
-</p>
+</h2>
 
 <p>
-  <strong>Description:</strong>
   <%= @recipe.description %>
 </p>
 
-<%= cl_image_tag @recipe.photo, height: 300, width: 400, crop: :fill %>
+<br>
 
-
-
+<br>
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+<%= link_to 'Back', recipes_path %> |
+<%= link_to 'Delete',recipe_path(@recipe.id), 'data-method' => :delete, :class => "delete", :confirm => "Are you sure ?" %>
+
