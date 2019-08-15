@@ -18,6 +18,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'haml', '~> 5.0', '>= 5.0.4'
 gem 'simple_form'
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
 
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'

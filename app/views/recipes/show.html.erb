@@ -10,5 +10,9 @@
   <%= @recipe.description %>
 </p>
 
+<%= cl_image_tag @recipe.photo, height: 300, width: 400, crop: :fill %>
+
+
+
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
