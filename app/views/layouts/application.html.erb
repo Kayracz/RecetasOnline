@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag :cocoon %>
 
   </head>
 
@@ -17,7 +18,6 @@
     <div class="navbar-brand">
 <div class="container">
  <%= link_to "Recipe box", root_path %>
-
  <div class="nav navbar-nav navbar-right">
    <%= link_to "New Recipe", new_recipe_path %>&nbsp;&nbsp;
    <%= link_to "Sign Out", root_path %>

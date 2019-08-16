@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Recipe.all
+    @recipe = Recipe.all.order("created_at DESC")
   end
 
   # GET /recipes/1
@@ -68,7 +68,9 @@ class RecipesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def recipe_params
-      params.require(:recipe).permit(:title, :description, :photo)
-    end
+def recipe_params
+    params.require(:recipe).permit(:title, :description, :image, ingredients_attributes: [:id, :name, :_destroy], directions_attributes: [:id, :step, :_destroy])
+  end
 end
+
+

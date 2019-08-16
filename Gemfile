@@ -16,10 +16,10 @@ gem 'bootstrap-sass', '~> 3.4.1'
 
 gem 'uglifier', '>= 1.3.0'
 
-gem 'haml', '~> 5.0', '>= 5.0.4'
 gem 'simple_form'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
+gem "cocoon"
 
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'

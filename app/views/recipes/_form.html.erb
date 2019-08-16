@@ -2,18 +2,52 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
+<div class="panel-body container" id="recipe_info">
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.input :description %>
   </div>
 
-  <div class="form-inputs">
+  <div class="form-inputs" id="recipe_image">
     <%= f.input :photo %>
      <%= f.input :photo_cache, as: :hidden %>
   </div>
-
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
 
+
+<div class="row">
+  <div class="col-md-6">
+ <h3>Ingredients</h3>
+  <div id='ingredients'>
+    <%= f.simple_fields_for :ingredients do |ingredient| %>
+      <%= render 'ingredients_fields', :f => ingredient %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'add ingredient', f, :ingredients %>
+    </div>
+  </div>
+  <%= f.submit 'Save' %>
 <% end %>
+</div>
+</div>
+
+<style>
+
+.form-inline {
+  margin-top: 15px;
+}
+.form-input {
+  width: 65% !important;
+  float: left;
+}
+.form-button {
+  float: left;
+  width: 30% !important;
+  margin-left: 5%;
+}
+.add-button {
+  margin-top: 25px;
+}
+</style>
